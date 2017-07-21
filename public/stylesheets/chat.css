@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#m{
+    font-size: medium;
+    color: #0f0f0f;
+    margin-left: 15px;
+    width: 300px;
+}
+
+#chat{
+    overflow: auto;
+    background-color: white;
+    margin-left: 16px;
+    margin-bottom: 10px;
+}
+
+#messages{
+    height: 360px;
+}
+
+#sendMsg{
+    margin-top: -38px;
+    margin-left: 350px;
+    width: 50px;
+}
+
+#messages ul {
+    padding: 5px 10px;
+    margin-left: -23px;
+    width: 367px;
+}
+
+#messages ul:nth-child(odd) {
+    background: #eee;
+    width: 367px;
+}

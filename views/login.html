@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Login</title>
+
+        <!-- css files -->
+        <link rel="stylesheet" type="text/css" href="../public/vendor/bootstrap/css/bootstrap.css"/>
+        <link rel="stylesheet" type="text/css" href="../public/vendor/bootstrap/css/bootstrap-theme.css"/>
+        <link rel="stylesheet" type="text/css" href="../public/stylesheets/login.css"/>
+
+        <!-- JavaScripts files -->
+        <script type="text/javascript" src="../public/javascripts/login.js"></script>
+
+
+    </head>
+
+    <body>
+
+        <!-- Login -->
+        <form class="form-horizontal" id="formLogin" METHOD="post" action="/login">
+            <fieldset>
+                <legend>Login</legend>
+                <div class="form-group">
+                    <label for="inputEmail" class="col-lg-2 control-label">Email:</label>
+                    <div class="col-lg-10">
+                        <input type="text" class="form-control input-sm" id="inputEmail" name="email">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputPassword" class="col-lg-2 control-label">Senha:</label>
+                    <div class="col-lg-10">
+                        <input type="password" class="form-control input-sm" id="inputPassword" name="password_field">
+                        <a href="#" onclick="showModalCadastrar()">Cadastre-se</a>
+                        <div>
+                            <a href="#">Esqueceu a senha</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-lg-10 col-lg-offset-2">
+                        <button type="submit" class="btn btn-primary">Entrar</button>
+                        <button type="reset" class="btn btn-default">Cancelar</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+
+        <!-- modal Cadastrar -->
+        <div class="modal" id="modalCadastro">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" onclick="closeModalCadastrar()">&times;</button>
+                        <h4 class="modal-title">Cadastre-se</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <form class="form-horizontal" METHOD="post" action="/signup">
+                            <fieldset>
+
+                                <div class="form-group">
+                                    <label for="inputEmail" class="col-lg-2 control-label">Email:</label>
+                                    <div class="col-lg-10">
+                                        <input class="form-control input-sm" type="text" id="inputEmail" name="cadEmail">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputUsername" class="col-lg-2 control-label">Usuario:</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" class="form-control input-sm" id="inputUsername" name="cadUsername">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="inputPassword" class="col-lg-2 control-label">Senha:</label>
+                                    <div class="col-lg-10">
+                                        <input type="password" class="form-control input input-sm" id="inputPassword" name="cadPassword">
+                                    </div>
+                                </div>
+
+                            </fieldset>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Cadastrar</button>
+                        <button type="button" class="btn btn-default" onclick="closeModalCadastrar()">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

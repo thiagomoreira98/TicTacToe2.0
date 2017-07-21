@@ -1,0 +1,22 @@
+#modalCadastro{
+    display: none;
+}
+
+#formLogin{
+    margin-left: 400px;
+    margin-right: 400px;
+    margin-top: 100px;
+
+}
+
+#inputEmail{
+    width: 300px;
+}
+
+#inputPassword{
+    width: 200px;
+}
+
+#inputUsername{
+    width: 200px;
+}

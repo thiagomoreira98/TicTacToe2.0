@@ -1,0 +1,27 @@
+{
+  "name": "tictactoe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thiagomoreira98/TicTacToe2.0.git"
+  },
+  "author": "Thiago Moreira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thiagomoreira98/TicTacToe2.0/issues"
+  },
+  "homepage": "https://github.com/thiagomoreira98/TicTacToe2.0#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "express-load": "^1.1.16",
+    "pg": "^6.4.1",
+    "pg-pool": "^2.0.1",
+    "socket.io": "^2.0.3"
+  }
+}

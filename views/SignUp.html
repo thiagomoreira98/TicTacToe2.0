@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Login</title>
+
+        <!-- css files -->
+        <link rel="stylesheet" type="text/css" href="../public/vendor/bootstrap/css/bootstrap.css"/>
+        <link rel="stylesheet" type="text/css" href="../public/vendor/bootstrap/css/bootstrap-theme.css"/>
+        <link rel="stylesheet" type="text/css" href="../public/stylesheets/login.css"/>
+
+        <!-- JavaScripts files -->
+        <script type="text/javascript" src="../public/javascripts/login.js"></script>
+
+    </head>
+
+    <body>
+        <form method="post" action="/signup">
+            <div class="form-group">
+                <label for="inputEmail" class="col-lg-2 control-label">Email:</label>
+                <div class="col-lg-10">
+                    <input class="form-control input-sm" type="text" id="inputEmail" name="cadEmail">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputUsername" class="col-lg-2 control-label">Usuario:</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control input-sm" id="inputUsername" name="cadUsername">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputPassword" class="col-lg-2 control-label">Senha:</label>
+                <div class="col-lg-10">
+                    <input type="password" class="form-control input input-sm" id="inputPassword" name="cadPassword">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <button type="button" class="btn btn-default" onclick="closeModalCadastrar()">Cancelar</button>
+        </form>
+
+    </body>
+</html>

@@ -1,0 +1,132 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Tic Tac Toe</title>
+  
+        <!-- css files -->
+        <link rel="stylesheet" type="text/css" href="../public/stylesheets/style.css"/>
+        <link rel="stylesheet" type="text/css" href="../public/stylesheets/modal.css"/>
+        <link rel="stylesheet" type="text/css" href="../public/stylesheets/chat.css"/>
+
+        
+        <!-- javascripts files -->
+        <script type="text/javascript" src="../public/javascripts/inGame.js"></script>
+        <script type="text/javascript" src="../public/javascripts/gameLogics.js"></script>
+        <script type="text/javascript" src="../public/javascripts/startGame.js"></script>
+        <script type="text/javascript" src="../public/javascripts/onePlayer.js"></script>
+        <script type="text/javascript" src="../public/javascripts/twoPlayers.js"></script>
+        <script type="text/javascript" src="../public/javascripts/result.js"></script>
+
+        <!-- Socket.io -->
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+
+        <!-- Bootstrap -->
+        <script type="text/javascript" src="../public/vendor/bootstrap/js/bootstrap.js"></script>
+        <link rel="stylesheet" type="text/css" href="../public/vendor/bootstrap/css/bootstrap.css"/>
+        <link rel="stylesheet" type="text/css" href="../public/vendor/bootstrap/css/bootstrap-theme.css"/>
+
+    </head>
+
+    <body>
+
+        <div align="center">
+            <h1 align="center">Tic Tac Toe</h1>
+            <button id="startButton" class="btn btn-primary" onclick="startGame()">Novo Jogo</button>
+        </div>
+
+
+        <div>
+            <!-- Chat -->
+            <div class="col-md-4">
+                <form action="">
+                    <div class="form-group">
+                        <div class="col-lg-10" id="chat">
+                            <table class="table table-striped table-hover">
+                                <tbody>
+                                    <ul id="messages"></ul>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <input class="form-control input-sm" type="text" id="m">
+                        <button id="sendMsg" class="btn btn-primary">SEND</button>
+                    </div>
+                </form>
+            </div>
+            <!-- Chat -->
+
+            <!-- Tabela do jogo -->
+            <div class="col-md-4">
+                <div id="game" align="center">
+                    <div class="linha">
+                        <img src="../public/images/branco.png" class="home" id="home0" val="" onclick="">
+                        <img src="../public/images/branco.png" class="home" id="home1" val="" onclick="">
+                        <img src="../public/images/branco.png" class="home" id="home2" val="" onclick="">
+                    </div>
+
+                    <div class="linha">
+                        <img src="../public/images/branco.png" class="home" id="home3" val="" onclick="">
+                        <img src="../public/images/branco.png" class="home" id="home4" val="" onclick="">
+                        <img src="../public/images/branco.png" class="home" id="home5" val="" onclick="">
+                    </div>
+
+                    <div class="linha">
+                        <img src="../public/images/branco.png" class="home" id="home6" val="" onclick="">
+                        <img src="../public/images/branco.png" class="home" id="home7" val="" onclick="">
+                        <img src="../public/images/branco.png" class="home" id="home8" val="" onclick="">
+                    </div>
+                </div>
+            </div>
+            <!-- Tabela do Jogo -->
+
+            <!-- Score -->
+            <div class="col-md-2">
+                <div id="score" class="col s12 m6" align="right">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 align="center" class="panel-title">PLACAR</h3>
+                        </div>
+
+                        <table class="table table-striped table-hover">
+                            <tr>
+                                <th id="placarPlayerX">Player X</th>
+                                <td id="aX">0</td>
+                            </tr>
+
+                            <tr>
+                                <th id="placarPlayerO">Player O</th>
+                                <td id="aO">0</td>
+                            </tr>
+
+                            <tr>
+                                <th id="placarEmpate">Empates</th>
+                                <td id="aDraw">0</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Resultado -- Modal -->
+        <div class="modal" id="modalResult">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" onclick="closeModalResult()" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <h2 align="center"><strong>GAME OVER</strong></h2>
+                        <p align="center" id="showModalResult"></p>
+                    </div>
+                    <button id="restartButton" class="btn btn-primary" onclick="restartGame()">Reiniciar Jogo</button>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript" src="../public/javascripts/socketIO.js"></script>
+
+    </body>
+</html>
