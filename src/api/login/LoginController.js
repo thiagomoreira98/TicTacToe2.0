@@ -1,6 +1,6 @@
 let fs = require('fs');
 let pg = require('pg');
-const pool = require('../lib/database.js');
+const pool = require('../../../config/Environment.js');
 
 
 module.exports = (app)=>{
