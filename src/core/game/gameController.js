@@ -1,12 +1,10 @@
 let fs = require('fs');
 
-module.exports = (app)=>{
-    return {
-        showGame
-    }
+module.exports = {
+    showGame
 };
 
 function showGame(req, res){
     res.writeHead(200, {"content-type": "text/html"});
-    res.end(fs.readFileSync("./views/index.html"));
+    res.end(fs.readFileSync("./views/game.html"));
 }

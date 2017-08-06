@@ -10,7 +10,11 @@ app.use(express.static(__dirname + "/"));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 
-load("controllers").then("routes").into(app);
+(function loadRoutes() {
+        require('./src/api/routes/gameRoute.js')(app);
+        require('./src/api/routes/loginRoute.js')(app);
+        require('./src/api/routes/signupRoute.js')(app);
+})();
 
 io.on('connection', function(client){
     console.log("a user connected");

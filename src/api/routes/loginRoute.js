@@ -1,5 +1,5 @@
 module.exports = (app)=>{
-    let loginController = app.controllers.LoginController;
+    let loginController = require('../../core/login/loginController.js');
 
     app.route("/login").get(loginController.login);
 

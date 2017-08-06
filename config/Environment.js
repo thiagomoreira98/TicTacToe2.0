@@ -2,10 +2,10 @@ const pg = require('pg');
 
 var config = {
     user: 'thiagomoreira',
-    database: 'jogodavelhasmndb',
+    database: 'db01',
     password: '1234',
-    host: 'localhost',
-    port: 5432,
+    host: '192.168.1.10',
+    port: 5544,
     max: 10, // max number of clients in the pool
     idleTimeoutMillis: 30000, // how long a client is allowed to remain idle before being closed
 };

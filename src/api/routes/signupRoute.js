@@ -1,5 +1,5 @@
 module.exports = (app)=>{
-    let signUp = app.controllers.SignUpController;
+    let signUp = require('../../core/signup/signupController.js');
 
     app.route("/signup").get(signUp.testCad);
 

@@ -3,11 +3,10 @@ let pg = require('pg');
 const pool = require('../../../config/Environment.js');
 
 
-module.exports = (app)=>{
-    return {
-        login,
-        authenticate
-    }
+module.exports = {
+    login,
+    authenticate,
+    localizarUsuario
 };
 
 function login(req, res){
@@ -24,7 +23,7 @@ function authenticate(req, res){
 
 function localizarUsuario(email, senha, res){
     const results = [];
-    let sql =`SELECT * FROM users WHERE email='${email}' and password='${senha}';`;
+    let sql =`SELECT * FROM users WHERE email='${email}' and senha='${senha}';`;
     //let connectpg = "postgres://thiagomoreira:1234@localhost:5432/jogodavelhasmndb";
 
 
@@ -45,7 +44,7 @@ function localizarUsuario(email, senha, res){
             if(results.length == 0){
                 console.log("Usuario invalido");
                 res.writeHead(200, {"content-type": "text/html"});
-                res.end(fs.readFileSync("./views/ErroLogin.html"));
+                res.end(fs.readFileSync("./views/erroLogin.html"));
             }
             else{
                 console.log("OK");

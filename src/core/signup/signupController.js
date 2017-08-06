@@ -1,16 +1,14 @@
 let fs = require('fs');
 let pg = require('pg');
 
-module.exports = (app)=>{
-    return {
+module.exports = {
         testCad,
         signUp
-    }
 };
 
 function testCad(req, res){
     res.writeHead(200, {"content-type": "text/html"});
-    res.end(fs.readFileSync("./views/SignUp.html"));
+    res.end(fs.readFileSync("./views/signup.html"));
 }
 
 function signUp(req, res){
@@ -19,9 +17,9 @@ function signUp(req, res){
     let password_ = req.body.cadPassword;
 
 
-    let sql =`SELECT * FROM users WHERE email='${email}' and password='${password_}';`;
-    let sql_insert =`INSERT INTO public.users(username, email, password) VALUES ('${username}', '${email}', '${password_}');`;
-    let connectpg = "postgres://thiagomoreira:1234@localhost:5432/jogodavelhasmndb";
+    let sql =`SELECT * FROM users WHERE email='${email}' and senha='${password_}';`;
+    let sql_insert =`INSERT INTO public.users(usuario, email, senha) VALUES ('${username}', '${email}', '${password_}');`;
+    let connectpg = "postgres://thiagomoreira:1234@localhost:5544/db01";
 
     let results = [];
 
@@ -46,7 +44,7 @@ function signUp(req, res){
             if(results.length == 0){
                 console.log("Usuario invalido");
                 //res.writeHead(200, {"content-type": "text/html"});
-                res.end(fs.readFileSync("./views/ErroLogin.html"));
+                res.end(fs.readFileSync("./views/erroLogin.html"));
             }
             else{
                 //res.writeHead(200, {"content-type": "text/html"});
